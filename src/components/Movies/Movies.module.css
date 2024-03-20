@@ -1,0 +1,78 @@
+.movies_container{
+    width: 20rem;
+    height: 35rem;
+    border: none;
+    background-color: #2b3035;
+    border-radius: 5px;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+
+}
+
+.movies_button button{
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    margin-top: 5px;
+    background-color: #212529;
+    color: white;
+    font-weight: 600;
+    
+}
+.moviecard_container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    width: 100%;
+}
+.moviecard_img_container{
+    flex: 1;
+    margin-left: 5px;
+}
+.moviecard_img_container img{
+    width: 50%;
+    height: auto;
+}
+.moviecard_details{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    
+}
+.moviecard_details button{
+    background-color: #30375f;
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 0;
+}
+.moviecard_movie_title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+
+}
+.moviecard_movie_year{
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+}
+
+.movies_list{
+    width: 100%;
+    border: none;
+    height: 25%;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}

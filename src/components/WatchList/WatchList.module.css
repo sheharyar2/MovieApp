@@ -1,0 +1,56 @@
+.watchlist_container{
+    width: 20rem;
+    height: 35rem;
+    border: none;
+    background-color: #2b3035;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;   
+}
+.watched_movies_container{
+    background-color: #273444;
+    box-shadow: 0 8px 8px -4px rgb(33, 34, 34);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color: white;
+    padding: 0px 2px 5px 2px;
+}
+.watched_movies_header{
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    gap: 5px;
+}
+.watched_movies_heading h1{
+    font-size: 15px;
+    margin-top: 5px;
+    padding: 0px;
+    margin-left: 12px;
+}
+
+
+.watched_movies_button{
+    align-self: baseline;
+    align-content: flex-end;
+}
+
+
+.watched_movies_button button{
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background-color: #212529;
+    color: white;
+    font-weight: 600;
+}
+
+
+.watched_movies_stats{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.watched_movies_attr span{
+    font-size: 16px;
+}
