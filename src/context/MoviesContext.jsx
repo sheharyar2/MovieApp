@@ -8,9 +8,9 @@ const MoviesContextProvider =({children})=>{
     const [btnText2, setBtnText2] = useState("+");
     const [movieList,setMovieList]= useState([...tempMovieData]);
     const [watchList,setWatchList]= useState([]);
-
+    const [avgDetails,setAvgDetails]=useState([]);
     
-    const contextValue = {btnText,setBtnText,btnText2,setBtnText2,movieList,setMovieList,watchList,setWatchList};
+    const contextValue = {btnText,setBtnText,btnText2,setBtnText2,movieList,setMovieList,watchList,setWatchList,avgDetails,setAvgDetails};
     
 return(
     <MoviesContext.Provider value={contextValue}>

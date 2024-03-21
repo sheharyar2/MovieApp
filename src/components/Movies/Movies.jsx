@@ -1,29 +1,24 @@
 import styles from './Movies.module.css'
 import { MoviesContext } from '../../context/MoviesContext';
 import { useContext } from 'react';
-import Card from '../Card/MoviesCard/Card';
-import { tempMovieData } from '../../../public/data/movies_data';
-import { watchedMovies } from '../../../public/data/movies_data';
 function Movies(){
-
-    const {btnText2,setBtnText2,movieList,setWatchList,watchList} =useContext(MoviesContext);
+    const {btnText2,setBtnText2,movieList,setWatchList} =useContext(MoviesContext);
     function btnTextHandler(){
         setBtnText2(prev => prev === "+" ? "-" : "+");
-
     }
     function movieCardHandler(id){
-        //console.log(tempMovieData[index]);
-        movieList.forEach((val,valIndex)=>{
-            if(val.imdbID===id){
-                setWatchList((movie)=>movie.push(val));
-            }
-           
-            
-        })
-        console.log(watchList);
-        //console.log(tempMovieData);
+        const movieToAdd= movieList.find(val =>val.imdbID ===id);
+        if(movieToAdd){
+            setWatchList(currentWatchList =>{
+                const isMovieInWatchList = currentWatchList.some(movie => movie.imdbID ===id);
+                if(!isMovieInWatchList)
+                {
+                    return [...currentWatchList,movieToAdd];
+                }
+                return currentWatchList;
+            })
+        }
     }
-
     return(
         <div className={styles.movies_container}> 
             { btnText2 ==="-" &&
@@ -46,7 +41,6 @@ function Movies(){
                     )
                 })
             }
-  
             </div>}
             <div className={styles.movies_button}>
                 <button onClick={(event)=>(btnTextHandler(event))}>{btnText2}</button>
