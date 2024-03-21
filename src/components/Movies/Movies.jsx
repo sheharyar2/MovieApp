@@ -1,8 +1,10 @@
 import styles from './Movies.module.css'
 import { MoviesContext } from '../../context/MoviesContext';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
+import { tempMovieData } from '../../../public/data/movies_data';
+
 function Movies(){
-    const {btnText2,setBtnText2,movieList,setWatchList} =useContext(MoviesContext);
+    const {btnText2,setBtnText2,movieList,setWatchList,searchValue,setMovieList} =useContext(MoviesContext);
     function btnTextHandler(){
         setBtnText2(prev => prev === "+" ? "-" : "+");
     }
@@ -19,6 +21,17 @@ function Movies(){
             })
         }
     }
+   useEffect(()=>{
+        let updatedMovieList =[...movieList];
+        updatedMovieList =updatedMovieList.filter(movie=>movie.Title.toLowerCase().indexOf(searchValue.toLowerCase())!==-1);
+        if(searchValue.length>0)
+        {
+            setMovieList(updatedMovieList);
+        }
+        else{
+            setMovieList(tempMovieData);
+        }
+   },[searchValue])
     return(
         <div className={styles.movies_container}> 
             { btnText2 ==="-" &&

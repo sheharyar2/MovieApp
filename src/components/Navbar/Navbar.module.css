@@ -6,6 +6,7 @@
     height: 65px;
     padding: 0px 50px;
     border-radius: 15px;
+    flex-wrap:wrap
 
 }
 .navbar_heading{
@@ -39,3 +40,8 @@
     font-weight: 600;
     font-size: 20px;
 }
+
+
+/* // `lg` applies to medium devices (tablets, less than 992px) */
+
+  

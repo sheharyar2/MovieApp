@@ -30,8 +30,6 @@ function WatchList()
                 avgUserRating:0,
                 avgWatchTime:0
             })
-               
-            
         }
 
 
@@ -42,7 +40,6 @@ function WatchList()
             const newWatchList = movieList.filter((movie)=>movie.imdbID!==id);
             return [...newWatchList];
         })
-        
     }
     return(
         <div className={styles.watchlist_container}>
